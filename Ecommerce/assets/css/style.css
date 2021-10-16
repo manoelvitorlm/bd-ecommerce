@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
-body {
-  color: #212529; }
-
-a {
-  text-decoration: none !important; }
-
 header {
   background: #0E39FF;
   padding: 25px; }
@@ -54,6 +48,38 @@ nav.nav-produtos {
       width: 100%; }
       nav.nav-produtos ul.nav li ul.nav li {
         padding: 10px 25px; }
+
+.banners-promocionais-estatico {
+  margin-top: 20px; }
+  .banners-promocionais-estatico .banners-promocionais-estatico-12x {
+    background-color: #0E39FF;
+    background-image: url("../images/parcele-em-12x.jpg"); }
+  .banners-promocionais-estatico .banners-promocionais-estatico-entrega {
+    background-color: #0E39FF;
+    background-image: url("../images/parcele-em-12x.jpg"); }
+  .banners-promocionais-estatico .banners-promocionais-estatico-12x,
+  .banners-promocionais-estatico .banners-promocionais-estatico-entrega {
+    background-size: cover;
+    height: 105px;
+    padding: 20px 60px;
+    color: #FFFFFF; }
+    .banners-promocionais-estatico .banners-promocionais-estatico-12x svg, .banners-promocionais-estatico .banners-promocionais-estatico-12x p,
+    .banners-promocionais-estatico .banners-promocionais-estatico-entrega svg,
+    .banners-promocionais-estatico .banners-promocionais-estatico-entrega p {
+      margin: 0;
+      padding: 0; }
+    .banners-promocionais-estatico .banners-promocionais-estatico-12x svg,
+    .banners-promocionais-estatico .banners-promocionais-estatico-entrega svg {
+      font-size: 55px; }
+    .banners-promocionais-estatico .banners-promocionais-estatico-12x p,
+    .banners-promocionais-estatico .banners-promocionais-estatico-entrega p {
+      font-weight: 100;
+      font-size: 23px;
+      line-height: 110%;
+      margin-left: 20px; }
+      .banners-promocionais-estatico .banners-promocionais-estatico-12x p strong,
+      .banners-promocionais-estatico .banners-promocionais-estatico-entrega p strong {
+        font-weight: bold; }
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -8283,5 +8309,10 @@ a.text-dark:focus, a.text-dark:hover {
     color: inherit;
     border-color: #dee2e6; } }
 /*# sourceMappingURL=bootstrap.min.css.map */
+body {
+  color: #212529; }
+
+a {
+  text-decoration: none !important; }
 
 /*# sourceMappingURL=style.css.map */

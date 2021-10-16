@@ -31,14 +31,29 @@ header {
 nav.nav-produtos {
   background-color: #212529;
   color: #FFFFFF; }
+  nav.nav-produtos a {
+    color: #FFFFFF; }
   nav.nav-produtos ul.nav li {
     position: relative;
     padding: 15px; }
     nav.nav-produtos ul.nav li svg {
       font-size: 20px;
       margin-right: 5px; }
+    nav.nav-produtos ul.nav li:hover {
+      background: black; }
+      nav.nav-produtos ul.nav li:hover ul.nav {
+        display: block; }
     nav.nav-produtos ul.nav li ul.nav {
-      display: none; }
+      z-index: 999;
+      display: none;
+      position: absolute;
+      top: 54px;
+      left: 0px;
+      background: #212529;
+      border-top: solid #0E39FF 10px;
+      width: 100%; }
+      nav.nav-produtos ul.nav li ul.nav li {
+        padding: 10px 25px; }
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)

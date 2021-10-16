@@ -81,6 +81,16 @@ nav.nav-produtos {
       .banners-promocionais-estatico .banners-promocionais-estatico-entrega p strong {
         font-weight: bold; }
 
+.produtos h1 {
+  padding: 20px 10px;
+  font-size: 30px; }
+.produtos .produtos-container .produtos-itens {
+  color: #212529; }
+  .produtos .produtos-container .produtos-itens h2 {
+    font-size: 19px; }
+.produtos .produtos-container .produtos-preco {
+  font-size: 16px; }
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

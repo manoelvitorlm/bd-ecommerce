@@ -1,0 +1,19 @@
+nav.nav-produtos {
+    background-color: $cor-secundaria;
+    color: $branco;
+    ul.nav {
+        li {
+            position: relative;
+            padding: 15px;
+
+            svg {
+                font-size: 20px;
+                margin-right: 5px;;
+            }
+            
+            ul.nav {
+                display: none;
+            }
+        }
+    }
+}

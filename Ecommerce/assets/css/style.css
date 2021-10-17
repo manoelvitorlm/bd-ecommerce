@@ -105,6 +105,8 @@ footer {
     color: #FFFFFF; }
     footer a:hover {
       color: #FFFFFF; }
+  footer article {
+    text-align: center; }
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)

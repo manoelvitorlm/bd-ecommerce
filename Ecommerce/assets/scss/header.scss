@@ -30,6 +30,9 @@ header {
                 svg{
                     font-size: 20px;
                 }
+                &:hover{
+                    color: $branco;
+                }
             }
         }
     }

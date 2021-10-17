@@ -21,6 +21,8 @@ header {
       color: #FFFFFF; }
       header ul li a svg {
         font-size: 20px; }
+      header ul li a:hover {
+        color: #FFFFFF; }
 
 nav.nav-produtos {
   background-color: #212529;

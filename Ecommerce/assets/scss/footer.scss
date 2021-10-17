@@ -1,0 +1,14 @@
+footer{
+    background: $cor-secundaria;
+    padding: 25px 0;
+    h4{
+        color: $cor-primaria;
+        font-size: 19px;
+    }
+    a{
+        color: $branco;
+        &:hover{
+            color: $branco;
+        }
+    }
+}

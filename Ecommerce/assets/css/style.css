@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
 header {
-  background: #0E39FF;
+  background: #ff6e0e;
   padding: 25px; }
   header form input[type="text"] {
     background: #FFFFFF;
@@ -46,18 +46,18 @@ nav.nav-produtos {
       top: 54px;
       left: 0px;
       background: #212529;
-      border-top: solid #0E39FF 10px;
-      width: 130%; }
+      border-top: solid #ff6e0e 10px;
+      width: 100%; }
       nav.nav-produtos ul.nav li ul.nav li {
-        padding: 10px 22px; }
+        padding: 10px 25px; }
 
 .banners-promocionais-estatico {
   margin-top: 20px; }
   .banners-promocionais-estatico .banners-promocionais-estatico-12x {
-    background-color: #0E39FF;
+    background-color: #ff6e0e;
     background-image: url("../images/parcele-em-12x.jpg"); }
   .banners-promocionais-estatico .banners-promocionais-estatico-entrega {
-    background-color: #0E39FF;
+    background-color: #ff6e0e;
     background-image: url("../images/parcele-em-12x.jpg"); }
   .banners-promocionais-estatico .banners-promocionais-estatico-12x,
   .banners-promocionais-estatico .banners-promocionais-estatico-entrega {
@@ -94,6 +94,17 @@ nav.nav-produtos {
         margin: 10px 0; }
     .produtos .produtos-container .produtos-preco {
       font-size: 16px; }
+
+footer {
+  background: #212529;
+  padding: 25px 0; }
+  footer h4 {
+    color: #ff6e0e;
+    font-size: 19px; }
+  footer a {
+    color: #FFFFFF; }
+    footer a:hover {
+      color: #FFFFFF; }
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)

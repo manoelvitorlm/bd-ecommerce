@@ -8,11 +8,11 @@
     margin-top: 20px;
 
     .banners-promocionais-estatico-12x {
-        @include banners-promocionais($azul, "../images/parcele-em-12x.jpg")
+        @include banners-promocionais($azul, "../images/banner_menor_1.png")
     }
 
     .banners-promocionais-estatico-entrega {
-        @include banners-promocionais($azul, "../images/parcele-em-12x.jpg")
+        @include banners-promocionais($azul, "../images/banner_menor_2.png")
     }
 
     .banners-promocionais-estatico-12x,

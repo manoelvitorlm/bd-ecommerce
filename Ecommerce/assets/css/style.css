@@ -55,10 +55,10 @@ nav.nav-produtos {
   margin-top: 20px; }
   .banners-promocionais-estatico .banners-promocionais-estatico-12x {
     background-color: #ff6e0e;
-    background-image: url("../images/parcele-em-12x.jpg"); }
+    background-image: url("../images/banner_menor_1.png"); }
   .banners-promocionais-estatico .banners-promocionais-estatico-entrega {
     background-color: #ff6e0e;
-    background-image: url("../images/parcele-em-12x.jpg"); }
+    background-image: url("../images/banner_menor_2.png"); }
   .banners-promocionais-estatico .banners-promocionais-estatico-12x,
   .banners-promocionais-estatico .banners-promocionais-estatico-entrega {
     background-size: cover;

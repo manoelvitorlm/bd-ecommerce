@@ -8350,6 +8350,13 @@ a.text-dark:focus, a.text-dark:hover {
     color: inherit;
     border-color: #dee2e6; } }
 /*# sourceMappingURL=bootstrap.min.css.map */
+.breadcrumb {
+  background: #f0f0f0;
+  margin: 40px 0;
+  padding: 0; }
+  .breadcrumb a {
+    color: #ff6e0e; }
+
 body {
   background: #f0f0f0;
   color: #212529; }

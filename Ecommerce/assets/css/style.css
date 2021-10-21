@@ -105,6 +105,16 @@ footer {
     color: #FFFFFF; }
     footer a:hover {
       color: #FFFFFF; }
+  footer .atd {
+    color: #FFFFFF; }
+  footer .row {
+    justify-content: center; }
+    footer .row .instagram {
+      margin-right: 8px; }
+    footer .row .facebook {
+      margin-right: 8px; }
+    footer .row .youtube {
+      margin-right: 8px; }
   footer article {
     text-align: center; }
 

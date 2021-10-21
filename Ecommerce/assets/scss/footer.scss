@@ -11,6 +11,26 @@ footer{
             color: $branco;
         }
     }
+
+    .atd{
+        color: $branco;
+    }
+
+    .row{
+        justify-content: center;
+        .instagram{
+            margin-right: 8px;
+        }
+
+        .facebook{
+            margin-right: 8px;
+        }
+
+        .youtube{
+            margin-right: 8px;
+        }
+    }
+
     article{
         text-align: center;
     }

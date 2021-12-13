@@ -13,10 +13,7 @@ Criação de um ecommerce de eletrônicos para a matéria de banco de dados do c
 Curso seguido: https://youtu.be/GMBc_E6VH8s
 
 ### Observação:
-Para rodar o software, é preciso executar ˋnpm installˋ na pasta Ecommerce para que os módulos react sejam carregados.
-
-
-
-~~~javascript
-Esta é uma linha de código em Javascript.
+Para rodar o software, é preciso executar o código abaixo na pasta Ecommerce para que os módulos react sejam carregados:
+~~~
+npm install
 ~~~

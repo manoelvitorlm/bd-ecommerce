@@ -4,7 +4,6 @@ import Footer from "../componets/Footer";
 import BreadCrumb from "../componets/BreadCrumb";
 import Produto from "../componets/Produto";
 
-
 function Computadores() {
 
   return (

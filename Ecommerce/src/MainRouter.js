@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import VejaMais from "./pages/VejaMais";
 import Home from "./pages/Home"
 import Computadores from "./pages/Computadores"
@@ -26,30 +26,30 @@ import Produto_Teclado_Gamer from './pages/Produto_Teclado_Gamer';
 function MainRouter() {
     return (
         <main>
-            <Switch>
-                <Route path="/" component={Home} exact />
-                <Route path="/veja-mais" component={VejaMais} />
-                <Route path="/computadores" component={Computadores} />
-                <Route path="/fontes" component={Fontes} />
-                <Route path="/memorias-ram" component={Memorias_Ram} />
-                <Route path="/notebooks" component={Notebooks} />
-                <Route path="/placas-de-video" component={Placas_de_video} />
-                <Route path="/processadores" component={Processadores} />
-                <Route path="/smartphones" component={Smartphones} />
-                <Route path="/tablets" component={Tablets} />
-                <Route path="/produto-computador" component={Produto_Computador} />
-                <Route path="/produto-fonte" component={Produto_Fonte} />
-                <Route path="/produto-headset" component={Produto_Headset} />
-                <Route path="/produto-memoria-ram" component={Produto_Memoria_Ram} />
-                <Route path="/produto-mouse-gamer" component={Produto_Mouse_Gamer} />
-                <Route path="/produto-notebook" component={Produto_Notebook} />
-                <Route path="/produto-pc-gamer" component={Produto_Pc_Gamer} />
-                <Route path="/produto-placa-de-video" component={Produto_Placa_de_Video} />
-                <Route path="/produto-processador" component={Produto_Processador} />
-                <Route path="/produto-smartphone" component={Produto_Smartphone} />
-                <Route path="/produto-tablet" component={Produto_Tablet} />
-                <Route path="/produto-teclado-gamer" component={Produto_Teclado_Gamer} />
-            </Switch>
+            <Routes>
+                <Route path="/" element={<Home/>} exact />
+                <Route path="/veja-mais" element={<VejaMais/>} />
+                <Route path="/computadores" element={<Computadores/>} />
+                <Route path="/fontes" element={<Fontes/>} />
+                <Route path="/memorias-ram" element={<Memorias_Ram/>} />
+                <Route path="/notebooks" element={<Notebooks/>} />
+                <Route path="/placas-de-video" element={<Placas_de_video/>} />
+                <Route path="/processadores" element={<Processadores/>} />
+                <Route path="/smartphones" element={<Smartphones/>} />
+                <Route path="/tablets" element={<Tablets/>} />
+                <Route path="/produto-computador" element={<Produto_Computador/>} />
+                <Route path="/produto-fonte" element={<Produto_Fonte/>} />
+                <Route path="/produto-headset" element={<Produto_Headset/>} />
+                <Route path="/produto-memoria-ram" element={<Produto_Memoria_Ram/>} />
+                <Route path="/produto-mouse-gamer" element={<Produto_Mouse_Gamer/>} />
+                <Route path="/produto-notebook" element={<Produto_Notebook/>} />
+                <Route path="/produto-pc-gamer" element={<Produto_Pc_Gamer/>} />
+                <Route path="/produto-placa-de-video" element={<Produto_Placa_de_Video/>} />
+                <Route path="/produto-processador" element={<Produto_Processador/>} />
+                <Route path="/produto-smartphone" element={<Produto_Smartphone/>} />
+                <Route path="/produto-tablet" element={<Produto_Tablet/>} />
+                <Route path="/produto-teclado-gamer" element={<Produto_Teclado_Gamer/>} />
+            </Routes>
         </main>
     );
 }

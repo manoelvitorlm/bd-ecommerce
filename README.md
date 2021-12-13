@@ -14,3 +14,9 @@ Curso seguido: https://youtu.be/GMBc_E6VH8s
 
 ### Observação:
 Para rodar o software, é preciso executar ˋnpm installˋ na pasta Ecommerce para que os módulos react sejam carregados.
+
+
+
+~~~javascript
+Esta é uma linha de código em Javascript.
+~~~

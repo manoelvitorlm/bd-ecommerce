@@ -15,7 +15,7 @@ ReactDOM.render(
 // const Client = require('pg').Client
 // const cliente = new Client({
 //     user: "byteshop",
-//     password: "byteshop",
+//     
 //     host: "159.223.106.29",
 //     port: 5432,
 //     database: "database"

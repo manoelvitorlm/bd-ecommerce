@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import MainRouter from './MainRouter';
+import App from './App';
 // import database from "./database.js"
 
 ReactDOM.render(
   <BrowserRouter>
         <MainRouter />
+        <App></App>
   </BrowserRouter>, 
   document.getElementById('root')
 );

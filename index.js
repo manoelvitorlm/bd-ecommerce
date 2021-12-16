@@ -14,9 +14,18 @@ app.use(function (req, res, next) {
 
 app.get('/', async (req, res) => {
   try{
-    const dados = await produtos.getProduto();
-    console.log(dados.rows);
-    
+    const dados = await produtos.getProdutos();
+    //console.log(dados.rows);
+    return res.json(dados.rows);
+  }catch(ex){
+    console.error(ex);
+  }
+})
+
+app.get('/:id', async (req, res) => {
+  try{
+    const dados = await produtos.getUmProduto(req.params.id)
+    //return res.send(dados.rows)
     return res.json(dados.rows);
   }catch(ex){
     console.error(ex);

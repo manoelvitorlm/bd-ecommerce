@@ -21,9 +21,7 @@ const Home = () => {
             const response = await fetch('http://localhost:3001',
                 { method: 'GET', headers: {'Content-Type': 'aplication/json'} } );
             const data = await response.json();
-            //console.log(data);
             setProdutos(data);
-            //console.log(produtos)
         } catch (ex) {
             console.log(ex);
         }
@@ -33,7 +31,7 @@ const Home = () => {
         return (
             produtos.map(({ id_produto, nome_produto, preco, link_img}) => {
                 return <Produto title={nome_produto} id={id_produto} preco={preco} 
-                            img={link_img}/>
+                            img={link_img} />
             })
         )
     }
@@ -49,23 +47,14 @@ const Home = () => {
             <main>
                 <Slider/>
                 <Banner />
-
                 {/*Mais populares*/}
                 <section className="container produtos">
                     <h1 className="text-center">Todos Produtos</h1>
-
                     {/*Listagem dos produtos*/}
                     <article className="row">
                         {renderProduto(produtos)}
-
-                        {/*<a href="./produto-tablet" className="produtos-container col-md-3">
-                            <Produto href="./produto-tablet" img="./assets/images/tablet.jpg" title="Tablet" 
-                            preco="799,90" id="TABGENX"/></a>*/}
                     </article>
                     {/*fim listagem de produtos*/}
-
-                    
-
                 </section>
             </main>
             <Footer /> {/*chamada da function Footer*/}
@@ -74,3 +63,4 @@ const Home = () => {
 }
 
 export default Home;
+

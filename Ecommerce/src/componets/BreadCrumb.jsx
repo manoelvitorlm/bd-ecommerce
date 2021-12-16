@@ -11,7 +11,8 @@ export default class BreadCrumb extends React.Component{
                 <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="/">Home</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">{this.props.categoria}</li>
+                        <li className="breadcrumb-item active" aria-current="page">{this.props.tipo_categoria}</li>
+                        <li className="breadcrumb-item active" aria-current="page">{this.props.nome_categoria}</li>
                         </ol>
                 </nav>
             </div> 

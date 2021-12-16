@@ -1,4 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
+import { useState } from "react";
+import { useEffect } from "react";
 import Home from "./pages/Home"
 import Computadores from "./pages/Computadores"
 import Fontes from "./pages/Fontes"
@@ -8,21 +10,43 @@ import Placas_de_video from "./pages/Placas_de_video"
 import Processadores from "./pages/Processadores"
 import Smartphones from './pages/Smartphones';
 import Tablets from './pages/Tablets';
-import Produto_Computador from './pages/Produto_Computador';
-import Produto_Fonte from './pages/Produto_Fonte';
-import Produto_Headset from './pages/Produto_Headset';
-import Produto_Memoria_Ram from './pages/Produto_Memoria_Ram';
-import Produto_Mouse_Gamer from './pages/Produto_Mouse_Gamer';
-import Produto_Notebook from './pages/Produto_Notebook';
-import Produto_Pc_Gamer from './pages/Produto_Pc_Gamer';
-import Produto_Placa_de_Video from './pages/Produto_Placa_de_Video';
-import Produto_Processador from './pages/Produto_Processador';
-import Produto_Smartphone from './pages/Produto_Smartphone';
-import Produto_Tablet from './pages/Produto_Tablet';
-import Produto_Teclado_Gamer from './pages/Produto_Teclado_Gamer';
 import Cadastro from './pages/Cadastro';
+import Detalhes_Produto from './pages/Detalhes_Produto';
+
 
 function MainRouter() {
+    
+    const [produtos, setProdutos] = useState([]);
+    
+    const getProduto = async () => {
+        try {
+            const response = await fetch('http://localhost:3001',
+                { method: 'GET', headers: {'Content-Type': 'aplication/json'} } );
+            const data = await response.json();
+            setProdutos(data);
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+    
+    const renderProduto = (produtos) => {
+        return (
+            produtos.map(({ id_produto, nome_produto, detalhes, preco, quantidade, link_img, tipo_categoria, nome_categoria}) => {
+                return <Route path={'/'+id_produto} render={(props) => <Detalhes_Produto {...props} 
+                        title={nome_produto} id={id_produto} preco={preco} detalhes={detalhes}
+                        qtd_estoque={quantidade} img={link_img} tipo_categoria={tipo_categoria} 
+                        nome_categoria={nome_categoria} /> }/>
+
+            })
+        )
+    }
+
+      
+    useEffect(() => {
+        getProduto()
+    }, [])
+    
+
     return (
         <main>
             <Switch>
@@ -36,18 +60,8 @@ function MainRouter() {
                 <Route path="/processadores" component={Processadores} />
                 <Route path="/smartphones" component={Smartphones} />
                 <Route path="/tablets" component={Tablets} />
-                <Route path="/produto-computador" component={Produto_Computador} />
-                <Route path="/produto-fonte" component={Produto_Fonte} />
-                <Route path="/produto-headset" component={Produto_Headset} />
-                <Route path="/produto-memoria-ram" component={Produto_Memoria_Ram} />
-                <Route path="/produto-mouse-gamer" component={Produto_Mouse_Gamer} />
-                <Route path="/produto-notebook" component={Produto_Notebook} />
-                <Route path="/produto-pc-gamer" component={Produto_Pc_Gamer} />
-                <Route path="/produto-placa-de-video" component={Produto_Placa_de_Video} />
-                <Route path="/produto-processador" component={Produto_Processador} />
-                <Route path="/produto-smartphone" component={Produto_Smartphone} />
-                <Route path="/produto-tablet" component={Produto_Tablet} />
-                <Route path="/produto-teclado-gamer" component={Produto_Teclado_Gamer} />
+                {renderProduto(produtos)}
+
             </Switch>
         </main>
     );

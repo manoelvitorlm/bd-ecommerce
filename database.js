@@ -7,7 +7,9 @@ const pool = new Pool({
   port: 5432,
 });    
 
-const getProduto = () => pool.query('SELECT * FROM application.produto ORDER BY id_produto')
+const getProdutos = () => pool.query('SELECT * FROM application.produto JOIN application.categoria USING (id_categoria) ORDER BY id_produto')
+
+const getUmProduto = (id) => pool.query('SELECT * FROM application.produto JOIN application.categoria USING (id_categoria) WHERE id_produto = $1', [id])
 
 const cadastraProduto = (nome, especificacao, status_produto) => {
   pool.query("INSERT INTO application.produto (id, nome, especificacao, status_produto) VALUES (DEFAULT, $2, $3, $4) RETURNING *;", [nome, especificacao, status_produto]);
@@ -15,17 +17,18 @@ const cadastraProduto = (nome, especificacao, status_produto) => {
 
 // TODO: Implementar o delete
 // const deleteProduto = (id) => {
-//     pool.query('DELETE FROM merchants WHERE ID = $1', [id])
+//     pool.query('DELETE FROM application.produto WHERE ID = $1', [id])
 // }
 
 // TODO: Implementar o update
 // const updateProduto = (id, name, email) => {
-//   pool.query('UPDATE merchants SET name = $1, email = $2 WHERE id = $3 RETURNING *;',
+//   pool.query('UPDATE application.produto SET name = $1, email = $2 WHERE id = $3 RETURNING *;',
 //   [name,email,id],);
 // }
 
 module.exports = {
-    getProduto,
+    getProdutos,
+    getUmProduto,
     cadastraProduto,
     // deleteProduto,
     // updateProduto,

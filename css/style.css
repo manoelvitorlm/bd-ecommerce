@@ -184,8 +184,8 @@ footer article {
   margin-left: 20px;
 }
 
-form {
-  background: #000;
+form.formulario {
+  color: black;
 }
 
 /*!

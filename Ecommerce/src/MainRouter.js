@@ -20,13 +20,14 @@ import Produto_Processador from './pages/Produto_Processador';
 import Produto_Smartphone from './pages/Produto_Smartphone';
 import Produto_Tablet from './pages/Produto_Tablet';
 import Produto_Teclado_Gamer from './pages/Produto_Teclado_Gamer';
-
+import Cadastro from './pages/Cadastro';
 
 function MainRouter() {
     return (
         <main>
             <Switch>
                 <Route path="/" component={Home} exact />
+                <Route path="/cadastro" component={Cadastro}/>
                 <Route path="/computadores" component={Computadores} />
                 <Route path="/fontes" component={Fontes} />
                 <Route path="/memorias-ram" component={Memorias_Ram} />

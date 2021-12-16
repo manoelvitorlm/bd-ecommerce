@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import MainRouter from './MainRouter';
+import { set } from 'express/lib/application';
 const axios = require('axios').default;
 const url = 'http://localhost:3001';
 
+
 function App() {
-  const [produtos, setMerchants] = useState(false);
+  const [produtos, setProdutos] = useState(false);
   useEffect(() => {
     getProduto();
   }, []);
@@ -14,12 +16,17 @@ function App() {
   function getProduto() {
     fetch('http://localhost:3001')
       .then(response => {
-        return response.text();
+        return response.json();
       })
       .then(data => {
-        setMerchants(data);
+        console.log(typeof(data));
+        setProdutos(data);
       });
   }
+  
+  
+  
+
 
   // function cadastrarProduto() {
   //   let name = prompt('Enter merchant name');
@@ -41,10 +48,12 @@ function App() {
   //   axios.put( url + `/merchants/${id}`, {name,email});
   //   window.location.reload();
   // }
-
+  
+  
   return (
     <div>
-      {produtos ? produtos : 'Não tem produtos disponíveis'}
+      
+      {/*produtos ? produtos: 'Não tem produtos disponíveis'*/}
       <br />
       {/* <button onClick={createMerchant}>Add merchant</button>
       <br />

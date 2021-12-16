@@ -1,32 +1,33 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
 
 export default class Produto extends React.Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props);
     }
 
-    render(){
+    render() {
         return (
-            <article className="produtos-itens">
-    
+            <Fragment>
+                <a href={this.props.href} className="produtos-container col-md-3">
+                    <article className="produtos-itens">
                         <img src={this.props.img} className="img-fluid" alt={this.props.title}></img>
-    
+
                         {/* título dos produtos */}
                         <h2>{this.props.title}</h2>
-    
+
                         {/* Preços dos produtos*/}
                         <strong className="produtos-preco">
-                            R$ {this.props.preco}
+                            R$ {this.props.preco},00
                         </strong>
                         {/* Fim Preços dos produtos*/}
-    
+
                         <div className="produtos-id">
                             id = {this.props.id}
                         </div>
-    
-            </article> 
+                    </article>
+                </a>
+            </Fragment>
         )
     }
 }

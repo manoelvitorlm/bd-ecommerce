@@ -7,10 +7,10 @@ const pool = new Pool({
   port: 5432,
 });    
 
-const getProduto = () => pool.query('SELECT * FROM mercado.produto')
+const getProduto = () => pool.query('SELECT * FROM application.produto ORDER BY id_produto')
 
 const cadastraProduto = (nome, especificacao, status_produto) => {
-  pool.query("INSERT INTO mercado.produto (id, nome, especificacao, status_produto) VALUES (DEFAULT, $2, $3, $4) RETURNING *;", [nome, especificacao, status_produto]);
+  pool.query("INSERT INTO application.produto (id, nome, especificacao, status_produto) VALUES (DEFAULT, $2, $3, $4) RETURNING *;", [nome, especificacao, status_produto]);
 }
 
 // TODO: Implementar o delete

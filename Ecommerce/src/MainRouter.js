@@ -1,5 +1,4 @@
 import { Switch, Route } from 'react-router-dom';
-import VejaMais from "./pages/VejaMais";
 import Home from "./pages/Home"
 import Computadores from "./pages/Computadores"
 import Fontes from "./pages/Fontes"
@@ -28,7 +27,6 @@ function MainRouter() {
         <main>
             <Switch>
                 <Route path="/" component={Home} exact />
-                <Route path="/veja-mais" component={VejaMais} />
                 <Route path="/computadores" component={Computadores} />
                 <Route path="/fontes" component={Fontes} />
                 <Route path="/memorias-ram" component={Memorias_Ram} />

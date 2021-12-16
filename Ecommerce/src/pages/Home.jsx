@@ -31,8 +31,9 @@ const Home = () => {
 
     const renderProduto = (produtos) => {
         return (
-            produtos.map(({ id_produto, nome_produto, preco}) => {
-                return <Produto title={nome_produto} id={id_produto} preco={preco}/>
+            produtos.map(({ id_produto, nome_produto, preco, link_img}) => {
+                return <Produto title={nome_produto} id={id_produto} preco={preco} 
+                            img={link_img}/>
             })
         )
     }
@@ -51,7 +52,7 @@ const Home = () => {
 
                 {/*Mais populares*/}
                 <section className="container produtos">
-                    <h1 className="text-center">Mais populares</h1>
+                    <h1 className="text-center">Todos Produtos</h1>
 
                     {/*Listagem dos produtos*/}
                     <article className="row">
@@ -63,11 +64,7 @@ const Home = () => {
                     </article>
                     {/*fim listagem de produtos*/}
 
-                    {/* Botão de veja mais*/}
-                    <div className="row d-flex justify-content-center">
-                        <a href="./veja-mais" className="btn btn-dark col-md-2">Veja mais</a>
-                    </div>
-                    {/* Fim Botão de veja mais*/}
+                    
 
                 </section>
             </main>

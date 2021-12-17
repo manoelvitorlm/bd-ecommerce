@@ -15,10 +15,9 @@ const cadastraProduto = (nome, especificacao, status_produto) => {
   pool.query("INSERT INTO application.produto (id, nome, especificacao, status_produto) VALUES (DEFAULT, $2, $3, $4) RETURNING *;", [nome, especificacao, status_produto]);
 }
 
-// TODO: Implementar o delete
-// const deleteProduto = (id) => {
-//     pool.query('DELETE FROM application.produto WHERE ID = $1', [id])
-// }
+const deleteProduto = (id) => {
+    pool.query('DELETE FROM application.produto WHERE id_produto = $1', [id])
+}
 
 // TODO: Implementar o update
 // const updateProduto = (id, name, email) => {
@@ -30,6 +29,6 @@ module.exports = {
     getProdutos,
     getUmProduto,
     cadastraProduto,
-    // deleteProduto,
+    deleteProduto,
     // updateProduto,
 }

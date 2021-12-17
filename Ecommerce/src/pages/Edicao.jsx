@@ -9,6 +9,9 @@ const Edicao = () => {
 
     const [produtos, setProdutos] = useState([]);
     const [isSelect, setIsSelect] = useState(false);
+    const [cadastro, setCadastro] = useState(false);
+    var atributosP;
+    var id;
 
     const getProduto = async () => {
         try {
@@ -29,34 +32,64 @@ const Edicao = () => {
         )
     }
 
+    const postarProduto = async () => {
+        
+        try {
+            axios.put('http://localhost:3001/editar/' + id, atributosP)
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
     const clicarEdicao = (e) => {
         e.preventDefault();
         let idSelecionado = document.getElementById("id").value;
         if (idSelecionado != false && idSelecionado != "Selecione o produto") {
 
-            const nomeProduto = produtos.map(function(key, value) {
-                if (key.id_produto == idSelecionado) {
-                    return key.nome_produto;
-                }    
-            })
-            document.getElementById("inputNome").value = nomeProduto
-            //setIsSelect(true)
-
-
-            //editarProduto(idSelecionado);
+            const nomeProduto = produtos.filter(p => (p.id_produto == idSelecionado))
+            id = nomeProduto[0].id_produto
+            document.getElementById("inputNome").value = nomeProduto[0].nome_produto
+            document.getElementById("inputDetalhes").value = nomeProduto[0].detalhes
+            document.getElementById("inputCategoriaP").value = nomeProduto[0].tipo_categoria
+            document.getElementById("inputCategoriaS").value = nomeProduto[0].nome_categoria
+            document.getElementById("inputPreco").value = nomeProduto[0].preco
+            document.getElementById("inputEstoque").value = nomeProduto[0].quantidade
+            document.getElementById("inputImagem").value = nomeProduto[0].link_img  
         }
-        //window.location.reload(true)
     }
 
+    const handleCadastrar = event => {
+        event.preventDefault();
+        setCadastro(true)
+        
+        
+        const nome_produto = document.getElementById("inputNome").value;
+        const detalhes = document.getElementById("inputDetalhes").value;
+        const tipo_categoria = document.getElementById("inputCategoriaP").value;
+        let nome_categoria;
+        if(document.getElementById("inputCategoriaS").value === "Adicionar categoria"){
+            nome_categoria = document.getElementById("inputNomeCategoria").value;
+            
+        }else if(document.getElementById("inputCategoriaS").value != "Adicionar Categoria"){
+            nome_categoria = document.getElementById("inputCategoriaS").value;
+        }
+        const quantidade = document.getElementById("inputEstoque").value;
+        const link_img = document.getElementById("inputImagem").value;
+        const preco = document.getElementById("inputPreco").value;
 
-    // const editarProduto = (id) => {
-    //     try {
-    //         fetch('http://localhost:3001/editar/' + id,
-    //         {method: 'PUT', headers: {'Content-Type': 'aplication/json'}});
-    //     } catch (ex) {
-    //         console.log(ex)
-    //     }
-    // }
+        atributosP = {
+            nome_produto: nome_produto,
+            detalhes: detalhes,
+            tipo_categoria: tipo_categoria,
+            nome_categoria: nome_categoria,
+            preco: preco,
+            quantidade: quantidade,
+            link_img: link_img
+        };
+        console.log(atributosP)
+
+        postarProduto();
+    }
 
     useEffect(() => {
         getProduto()
@@ -68,7 +101,7 @@ const Edicao = () => {
             <NavBar></NavBar>
             <main>
 
-                <form className="formulario container-md" /*onSubmit={handleCadastrar}*/>
+                <form className="formulario container-md" onSubmit={handleCadastrar}>
                     <select id="id" class="form-select" aria-label="Default select example">
                         <option selected>Selecione o produto</option>
                         {renderSeletor(produtos)}
@@ -134,7 +167,6 @@ const Edicao = () => {
                         <button type="submit" className="btn btn-primary">Cadastrar</button>
                     </div>
 
-                    {/* {cadastro && <div>Enviando submissão</div>} */}
                 </form>
 
             </main>

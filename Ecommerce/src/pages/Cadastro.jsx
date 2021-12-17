@@ -63,16 +63,7 @@ const Cadastro = () => {
             link_img: link_img
         };
 
-        
         postarProduto();
-        // console.log(nome_produto)
-        // console.log(detalhes)
-        // console.log(tipo_categoria)
-        // console.log(nome_categoria)
-        // console.log(preco)
-        // console.log(quantidade)
-        // console.log(link_img)
-
     }
 
     window.onload = function () {

@@ -60,7 +60,8 @@ app.put('/editar/:id', async (req, res) =>{
   try{
     const {nome_produto,detalhes,tipo_categoria,nome_categoria,
       preco,quantidade,link_img} = req.body;
-      await produtos.editarProduto(req.params.id)
+      await produtos.editarProduto(req.params.id, nome_produto,detalhes,tipo_categoria,nome_categoria,
+                                      preco,quantidade,link_img)
       return res.send('Ok!');
   }catch(ex){
     console.error(ex);

@@ -24,6 +24,7 @@ header ul li a {
   font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
+  padding-right: 10px;
 }
 header ul li a svg {
   font-size: 20px;
@@ -120,6 +121,9 @@ nav.nav-produtos ul.nav li ul.nav li {
   font-size: 20px;
   margin: 10px 0;
 }
+.produtos .produtos-container .produtos-itens a {
+  padding: 80px;
+}
 .produtos .produtos-container .produtos-preco {
   font-size: 16px;
 }
@@ -190,6 +194,10 @@ form.formulario {
 form.formulario div {
   padding: 10px;
   padding-left: 0px;
+}
+
+.margin-left {
+  margin-left: 10px;
 }
 
 /*!

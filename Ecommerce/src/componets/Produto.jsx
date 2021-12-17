@@ -6,10 +6,7 @@ export default class Produto extends React.Component {
     constructor(props) {
         super(props);
     }
-    
-
-    render() {
-        
+    render() {   
         return (
             <Fragment>
                 <a href={'/'+ this.props.id} className="produtos-container col-md-3">
@@ -27,8 +24,8 @@ export default class Produto extends React.Component {
                         <div className="produtos-id">
                             id = {this.props.id}
                         </div>
-                    </article>
-                </a>
+                    </article>                   
+                </a>           
             </Fragment>
         )
     }

@@ -41,15 +41,14 @@ app.get('/:id', async (req, res) => {
 //   }
 // })
 
-// app.delete('/merchants/:id', async (req, res) => {
-//   try{
-//     await merchant_model.deleteMerchant(req.params.id)
-//     return res.send('Ok!');
-//   }catch(ex){
-//     console.error(ex);
-//   }
-  
-// })
+app.delete('/deletar/:id', async (req, res) => {
+  try{
+    await produtos.deleteProduto(req.params.id)
+    return res.send('Ok!');
+  }catch(ex){
+    console.error(ex);
+  }
+})
 
 // app.put('/merchants/:id', async (req, res) =>{
 //   try{

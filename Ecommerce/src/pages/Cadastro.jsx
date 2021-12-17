@@ -3,12 +3,14 @@ import Header from '../componets/Header'
 import NavBar from '../componets/NavBar';
 import Footer from '../componets/Footer';
 import {useState} from 'react';   
+const axios = require('axios').default;
 
 const Cadastro = () => {
 
     const [cadastro, setCadastro] = useState(false);
     const [categoria, setSelect] = useState(false);
     const [novaCategoeria, setCategoria] = useState(false);
+    var atributosP;
 
     const handleSelect = event => {
         event.preventDefault();
@@ -22,6 +24,15 @@ const Cadastro = () => {
         setTimeout(() => {
             setCategoria(false)
         }, 3000)
+    }
+
+    const postarProduto = async () => {
+        
+        try {
+            axios.post('http://localhost:3001/cadastrar',atributosP)
+        } catch (ex) {
+            console.log(ex);
+        }
     }
 
     const handleCadastrar = event => {
@@ -39,15 +50,28 @@ const Cadastro = () => {
             nome_categoria = document.getElementById("inputCategoriaS").value;
         }
         const quantidade = document.getElementById("inputEstoque").value;
-        const link_imagem = document.getElementById("inputImagem").value;
+        const link_img = document.getElementById("inputImagem").value;
         const preco = document.getElementById("inputPreco").value;
-        console.log(nome_produto)
-        console.log(detalhes)
-        console.log(tipo_categoria)
-        console.log(nome_categoria)
-        console.log(preco)
-        console.log(quantidade)
-        console.log(link_imagem)
+
+        atributosP = {
+            nome_produto: nome_produto,
+            detalhes: detalhes,
+            tipo_categoria: tipo_categoria,
+            nome_categoria: nome_categoria,
+            preco: preco,
+            quantidade: quantidade,
+            link_img: link_img
+        };
+
+        
+        postarProduto();
+        // console.log(nome_produto)
+        // console.log(detalhes)
+        // console.log(tipo_categoria)
+        // console.log(nome_categoria)
+        // console.log(preco)
+        // console.log(quantidade)
+        // console.log(link_img)
 
     }
 

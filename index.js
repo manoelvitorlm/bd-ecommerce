@@ -32,14 +32,20 @@ app.get('/:id', async (req, res) => {
   }
 })
 
-// app.post('/produto', async (req, res) => {
-//   try{
-//     const {name, email} = req.body;
-//     await produtos.createMerchant(name, email)
-//   }catch(ex){
-//     console.error(ex);
-//   }
-// })
+app.post('/cadastrar', async (req, res) => {
+  try{
+    const {nome_produto,detalhes,tipo_categoria,nome_categoria,
+          preco,quantidade,link_img} = req.body;
+    console.log(nome_produto,detalhes,tipo_categoria,nome_categoria,
+      preco,quantidade,link_img);
+    
+    await produtos.cadastraProduto(nome_produto,detalhes,tipo_categoria,nome_categoria,preco,quantidade,link_img)
+    
+    return res.send('Ok!');
+  }catch(ex){
+    console.error(ex);
+  }
+})
 
 app.delete('/deletar/:id', async (req, res) => {
   try{

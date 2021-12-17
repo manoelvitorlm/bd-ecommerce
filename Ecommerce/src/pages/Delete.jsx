@@ -35,7 +35,7 @@ const Delete = () => {
     const clicarDelete = (e) => {
         e.preventDefault();
         let idSelecionado = document.getElementById("id").value;
-        if(idSelecionado != false && idSelecionado != "Selecione o Id"){
+        if(idSelecionado != false && idSelecionado != "Selecione o produto"){
             setIsSelect(true);
             deletarProduto(idSelecionado); 
         }

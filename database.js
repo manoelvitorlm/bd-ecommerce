@@ -18,6 +18,7 @@ const cadastraProduto = (nome_produto,detalhes, tipo_categoria,nome_categoria,
               "VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7)", [nome_produto,detalhes,tipo_categoria,nome_categoria,preco,quantidade,[link_img]]);
 }
 
+const editarProduto = (id) => console.log("teste");
 
 const deleteProduto = (id) => {
     pool.query('DELETE FROM application.produto WHERE id_produto = $1', [id])
@@ -34,5 +35,5 @@ module.exports = {
     getUmProduto,
     cadastraProduto,
     deleteProduto,
-    // updateProduto,
-}
+    editarProduto,
+  }

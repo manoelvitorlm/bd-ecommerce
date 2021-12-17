@@ -56,15 +56,16 @@ app.delete('/deletar/:id', async (req, res) => {
   }
 })
 
-// app.put('/merchants/:id', async (req, res) =>{
-//   try{
-//     const {name, email} = req.body;
-//     await merchant_model.updateMerchant(req.params.id, name, email)
-//     return res.send('Ok!');
-//   }catch(ex){
-//     console.error(ex);
-//   }
-// })
+app.put('/editar/:id', async (req, res) =>{
+  try{
+    const {nome_produto,detalhes,tipo_categoria,nome_categoria,
+      preco,quantidade,link_img} = req.body;
+      await produtos.editarProduto(req.params.id)
+      return res.send('Ok!');
+  }catch(ex){
+    console.error(ex);
+  }
+})
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)

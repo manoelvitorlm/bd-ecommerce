@@ -13,7 +13,7 @@ import Tablets from './pages/Tablets';
 import Cadastro from './pages/Cadastro';
 import Detalhes_Produto from './pages/Detalhes_Produto';
 import Delete from './pages/Delete'
-
+import Edicao from './pages/Edicao'
 
 function MainRouter() {
     
@@ -54,6 +54,7 @@ function MainRouter() {
                 <Route path="/" component={Home} exact />
                 <Route path="/cadastrar" component={Cadastro}/>
                 <Route path="/deletar" component={Delete}/>
+                <Route path="/edicao" component={Edicao}/>
                 <Route path="/computadores" component={Computadores} />
                 <Route path="/fontes" component={Fontes} />
                 <Route path="/memorias-ram" component={Memorias_Ram} />

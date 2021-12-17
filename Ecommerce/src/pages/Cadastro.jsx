@@ -2,9 +2,18 @@
 import Header from '../componets/Header'
 import NavBar from '../componets/NavBar';
 import Footer from '../componets/Footer';
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
+
+const formReducer = (state, event) => {
+    return {
+        ...state,
+        [event.name]: event.value
+    }
+}
 
 const Cadastro = () => {
+
+    const [formData, setFormData] = useReducer(formReducer, {});
 
     const [cadastro, setCadastro] = useState(false);
     const [categoria, setSelect] = useState(false);
@@ -14,7 +23,7 @@ const Cadastro = () => {
         event.preventDefault();
         setSelect(true)
     }
-    
+
     const handleCategoria = event => {
         event.preventDefault();
         setCategoria(true)
@@ -27,12 +36,49 @@ const Cadastro = () => {
     const handleCadastrar = event => {
         event.preventDefault();
         setCadastro(true)
+        
+        const selectElement = document.querySelector(".select-categorias")
 
-        setTimeout(() => {
-            setCadastro(false)
-        }, 3000)
+        selectElement.addEventListener('change', (event) => {
+            if (event.target.value === "Adicionar categoria") {
+                handleSelect(event)
+
+                const categoriaNova = document.getElementById("inputNomeCategoria").value;
+                console.log(categoriaNova);
+            }
+            // const result = document.querySelector('.result');
+            // result.textContent = "Funcionou"
+        })
+
+        const nome_produto = document.getElementById("inputNome").value;
+        const detalhes = document.getElementById("inputDetalhes").value;
+        const tipo_categoria = document.getElementById("inputCategoriaP").value;
+        const nome_categoria = document.getElementById("inputCategoriaS").value;
+        const quantidade = document.getElementById("inputEstoque").value;
+        const link_imagem = document.getElementById("inputImagem").value;
+        const preco = document.getElementById("inputPreco").value;
+
+        console.log(nome_produto)
+        console.log(detalhes)
+        console.log(tipo_categoria)
+        console.log(nome_categoria)
+        // console.log(categoria)
+        console.log(quantidade)
+        console.log(link_imagem)
+        console.log(preco)
+
+        // setTimeout(() => {
+        //     setCadastro(false)
+        // }, 3000)
         // alert("Submissão enviada");
     }
+
+    // const handleForm = event => {
+    //     setFormData({
+    //         name: event.target.name,
+    //         value: event.target.value,
+    //     });
+    // }
 
     window.onload = function () {
 
@@ -41,6 +87,9 @@ const Cadastro = () => {
         selectElement.addEventListener('change', (event) => {
             if (event.target.value === "Adicionar categoria") {
                 handleSelect(event)
+
+                const categoriaNova = document.getElementById("inputNomeCategoria").value;
+                console.log(categoriaNova);
             }
             // const result = document.querySelector('.result');
             // result.textContent = "Funcionou"
@@ -67,7 +116,7 @@ const Cadastro = () => {
                     <div className="categorias col-md-8 d-flex">
                         <div className='categoria-principal col-md-4'>
                             <label for="inputState" className="form-label">Categoria principal</label>
-                            <select id="inputState" className="form-select">
+                            <select id="inputCategoriaP" className="form-select">
                                 <option selected>Tipo</option>
                                 <option>Hardware</option>
                                 <option>Eletrônicos</option>
@@ -76,7 +125,7 @@ const Cadastro = () => {
 
                         <div className='categoria-secundaria col-md-4'>
                             <label for="inputState" className="form-label">Categoria secundária</label>
-                            <select id="inputState" className="select-categorias">
+                            <select id="inputCategoriaS" className="select-categorias">
                                 <option selected>Tipo</option>
                                 <option className='nova-categoria'>Adicionar categoria</option>
                                 <option>Smartphone</option>

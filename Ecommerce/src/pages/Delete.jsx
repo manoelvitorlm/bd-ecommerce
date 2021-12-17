@@ -78,7 +78,7 @@ const Delete = () => {
                     <h1 className="text-center">Todos Produtos</h1>
                     {/*Listagem dos produtos*/}
                     <select id="id" class="form-select" aria-label="Default select example">
-                        <option selected>Selecione o Id</option>
+                        <option selected>Selecione o produto</option>
                         {renderSeletor(produtos)}
                     </select>
 

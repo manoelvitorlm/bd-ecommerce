@@ -1,19 +1,10 @@
-//import React from 'React';
+import React from 'react';
 import Header from '../componets/Header'
 import NavBar from '../componets/NavBar';
 import Footer from '../componets/Footer';
-import { useState, useReducer } from 'react';
-
-const formReducer = (state, event) => {
-    return {
-        ...state,
-        [event.name]: event.value
-    }
-}
+import {useState} from 'react';   
 
 const Cadastro = () => {
-
-    const [formData, setFormData] = useReducer(formReducer, {});
 
     const [cadastro, setCadastro] = useState(false);
     const [categoria, setSelect] = useState(false);
@@ -37,48 +28,28 @@ const Cadastro = () => {
         event.preventDefault();
         setCadastro(true)
         
-        const selectElement = document.querySelector(".select-categorias")
-
-        selectElement.addEventListener('change', (event) => {
-            if (event.target.value === "Adicionar categoria") {
-                handleSelect(event)
-
-                const categoriaNova = document.getElementById("inputNomeCategoria").value;
-                console.log(categoriaNova);
-            }
-            // const result = document.querySelector('.result');
-            // result.textContent = "Funcionou"
-        })
-
         const nome_produto = document.getElementById("inputNome").value;
         const detalhes = document.getElementById("inputDetalhes").value;
         const tipo_categoria = document.getElementById("inputCategoriaP").value;
-        const nome_categoria = document.getElementById("inputCategoriaS").value;
+        let nome_categoria;
+        if(document.getElementById("inputCategoriaS").value === "Adicionar categoria"){
+            nome_categoria = document.getElementById("inputNomeCategoria").value;
+            
+        }else if(document.getElementById("inputCategoriaS").value != "Adicionar Categoria"){
+            nome_categoria = document.getElementById("inputCategoriaS").value;
+        }
         const quantidade = document.getElementById("inputEstoque").value;
         const link_imagem = document.getElementById("inputImagem").value;
         const preco = document.getElementById("inputPreco").value;
-
         console.log(nome_produto)
         console.log(detalhes)
         console.log(tipo_categoria)
         console.log(nome_categoria)
-        // console.log(categoria)
+        console.log(preco)
         console.log(quantidade)
         console.log(link_imagem)
-        console.log(preco)
 
-        // setTimeout(() => {
-        //     setCadastro(false)
-        // }, 3000)
-        // alert("Submissão enviada");
     }
-
-    // const handleForm = event => {
-    //     setFormData({
-    //         name: event.target.name,
-    //         value: event.target.value,
-    //     });
-    // }
 
     window.onload = function () {
 
@@ -88,11 +59,7 @@ const Cadastro = () => {
             if (event.target.value === "Adicionar categoria") {
                 handleSelect(event)
 
-                const categoriaNova = document.getElementById("inputNomeCategoria").value;
-                console.log(categoriaNova);
             }
-            // const result = document.querySelector('.result');
-            // result.textContent = "Funcionou"
         })
     }
 
@@ -146,9 +113,7 @@ const Cadastro = () => {
                                 <label for="nome-categoria" className="form-label">Nome da categoria</label>
                                 <input type="text" className="form-control" id="inputNomeCategoria"></input>
                             </div>
-                            <div>
-                                <button type="submit" className="btn btn-primary">Cadastrar</button>
-                            </div>
+                            
                             {novaCategoeria && <div>teste</div>}
                         </div>
 
